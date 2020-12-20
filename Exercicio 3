@@ -1,0 +1,31 @@
+nota1 = input("Digite a nota do aluno 1: ")
+nota2 = input("Digite a nota do aluno 2: ")
+nota3 = input("Digite a nota do aluno 3: ")
+nota4 = input("Digite a nota do aluno 4: ")
+nota5 = input("Digite a nota do aluno 5: ")
+
+dicionario = {}
+
+dicionario = {
+    "aluno 1": nota1,
+    "aluno 2": nota2,
+    "aluno 3": nota3,
+    "aluno 4": nota4,
+    "aluno 5": nota5
+}
+
+sort_valores = sorted(dicionario.values())
+
+sorted_dict = {}
+
+for i in sort_valores:
+    for j in dicionario.keys():
+        if dicionario[j] == i:
+            sorted_dict[j] = dicionario[j]
+            break
+
+valor_max = max(sorted_dict.values())
+
+chave_max = list(sorted_dict.keys())[list(sorted_dict.values()).index(valor_max)]
+
+print("O aluno com a maior nota é o " + str(chave_max) + " e o maior valor é " + str(valor_max))
