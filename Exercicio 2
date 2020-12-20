@@ -1,6 +1,7 @@
 from math import *
 import numpy as np
-import pandas as pd
+
+#primeiro criei uma lista vazia, para depois adicionar os elementos de acordo com a paridade do número, de 1 a 10
 
 lista = []
 
@@ -9,19 +10,20 @@ for i in range(1,10):
         lista.append(3**i+7*factorial(i))
     else:
         lista.append(2**i+4*log(i))
-        # criei o vetor a partir da lista
+
+# em seguida criei o vetor a partir da lista usando array do Numpy
         
 vetor = np.array(lista)
+
+# usei o método sort para ordenar a lista em ordem crescente, e criei um vetor auxiliar a partir dessa lista, no qual o último elemento é o maior
 
 lista.sort()
 
 vetor_aux = np.array(lista)
 
-print(vetor_aux)
-
 print("O maior valor é: " + str(round(vetor_aux[-1],2)))
 
-# achando o maior valor, vou fazer a média independente do número de elementos da lista
+# achando o maior valor, usei o laço iterativo "for" para somar os valores dos elementos dentro do vetor auxiliar e para contar o número de elementos, assim o código funciona independente de quantas posições existam no vetor.
 
 soma = 0
 
@@ -30,6 +32,7 @@ cont_elementos = 0
 for j in range(1,len(vetor_aux)):
     soma += vetor_aux[j]
     cont_elementos =+ 1
+    
 avg = soma/cont_elementos
 
 print("A média é: " + str(round(avg,2)))
