@@ -1,8 +1,12 @@
+# usando a função input simples, podemos testar o código para quaisquer notas dos 5 alunos
+
 nota1 = input("Digite a nota do aluno 1: ")
 nota2 = input("Digite a nota do aluno 2: ")
 nota3 = input("Digite a nota do aluno 3: ")
 nota4 = input("Digite a nota do aluno 4: ")
 nota5 = input("Digite a nota do aluno 5: ")
+
+# criei o dicionario com as chaves sendo os alunos e os valores, suas notas
 
 dicionario = {}
 
@@ -14,7 +18,11 @@ dicionario = {
     "aluno 5": nota5
 }
 
+# usando a função sorted() ordenei em ordem crescente os valores do dicionario
+
 sort_valores = sorted(dicionario.values())
+
+# em seguida criei um dicionario que representará o sort_valores e será preenchido em ordem crescente, da menor nota até a maior, comparando os valores do dicionario com os do sorted_dictionary
 
 sorted_dict = {}
 
@@ -24,7 +32,11 @@ for i in sort_valores:
             sorted_dict[j] = dicionario[j]
             break
 
+# usando a função max obtive como output o valor com a nota mais alta
+            
 valor_max = max(sorted_dict.values())
+
+# para conseguir a chave com o aluno correspondente a partir da nota mais alta, criei uma lista com as chaves e com os valores para acessá-la com o método index
 
 chave_max = list(sorted_dict.keys())[list(sorted_dict.values()).index(valor_max)]
 
