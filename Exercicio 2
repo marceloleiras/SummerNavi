@@ -1,0 +1,35 @@
+from math import *
+import numpy as np
+import pandas as pd
+
+lista = []
+
+for i in range(1,10):
+    if i%2 == 0:
+        lista.append(3**i+7*factorial(i))
+    else:
+        lista.append(2**i+4*log(i))
+        # criei o vetor a partir da lista
+        
+vetor = np.array(lista)
+
+lista.sort()
+
+vetor_aux = np.array(lista)
+
+print(vetor_aux)
+
+print("O maior valor é: " + str(round(vetor_aux[-1],2)))
+
+# achando o maior valor, vou fazer a média independente do número de elementos da lista
+
+soma = 0
+
+cont_elementos = 0
+
+for j in range(1,len(vetor_aux)):
+    soma += vetor_aux[j]
+    cont_elementos =+ 1
+avg = soma/cont_elementos
+
+print("A média é: " + str(round(avg,2)))
